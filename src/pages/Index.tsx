@@ -4,7 +4,6 @@ import SearchSection from '@/components/SearchSection';
 import Categories from '@/components/Categories';
 import RecommendedProducts from '@/components/RecommendedProducts';
 import HowItWorks from '@/components/HowItWorks';
-import Reviews from '@/components/Reviews';
 import TrackingSection from '@/components/TrackingSection';
 import MobileApp from '@/components/MobileApp';
 import Footer from '@/components/Footer';
@@ -17,7 +16,6 @@ const Index = () => {
       <Categories />
       <RecommendedProducts />
       <HowItWorks />
-      <Reviews />
       <TrackingSection />
       <MobileApp />
       <Footer />
