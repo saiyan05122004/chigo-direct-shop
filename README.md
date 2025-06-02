@@ -1,58 +1,27 @@
-# Welcome to your Lovable project
+# ChiGO
 
-## Project info
+## Описание
+В рамках дипломной работы разработан веб-сервис — аналог популярных китайских маркетплейсов, таких как AliExpress, 1688, Taobao, с акцентом на максимальную простоту интерфейса и прямую доставку товаров из Китая в Россию.
 
-**URL**: https://lovable.dev/projects/85ff8cd0-12c6-47ab-ac61-fbe2839acd7c
-
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/85ff8cd0-12c6-47ab-ac61-fbe2839acd7c) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
+Цель проекта — создать единый и понятный онлайн-сервис, который объединяет лучшие функции китайских торговых платформ, избавляя пользователя от сложностей с языковым барьером, посредниками, непонятным интерфейсом и логистикой.
+## Как запустить:
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Шаг 1: Клонируй репозиторий через URL
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Шаг 2: Перейди в директорию с проектом
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
+# Шаг 3: Установи зависимости
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Шаг 4: Запусти локальный сервер
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Какие технологии использует проект?
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
+Этот проект построен на:
 
 - Vite
 - TypeScript
@@ -60,14 +29,4 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/85ff8cd0-12c6-47ab-ac61-fbe2839acd7c) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
