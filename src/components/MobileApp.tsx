@@ -1,5 +1,5 @@
 
-import { Mobile, Star } from 'lucide-react';
+import { Smartphone, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const MobileApp = () => {
@@ -18,11 +18,11 @@ const MobileApp = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button className="bg-white text-chigo-red hover:bg-gray-100 h-12 px-6">
-                <Mobile className="h-5 w-5 mr-2" />
+                <Smartphone className="h-5 w-5 mr-2" />
                 App Store
               </Button>
               <Button className="bg-white text-chigo-red hover:bg-gray-100 h-12 px-6">
-                <Mobile className="h-5 w-5 mr-2" />
+                <Smartphone className="h-5 w-5 mr-2" />
                 Google Play
               </Button>
             </div>

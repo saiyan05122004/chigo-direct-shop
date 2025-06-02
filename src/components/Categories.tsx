@@ -1,14 +1,14 @@
 
-import { Package, Mobile, Star } from 'lucide-react';
+import { Package, Smartphone, Star } from 'lucide-react';
 
 const categories = [
-  { icon: Mobile, name: 'Электроника', count: '2.5M+', color: 'bg-blue-50 text-blue-600' },
+  { icon: Smartphone, name: 'Электроника', count: '2.5M+', color: 'bg-blue-50 text-blue-600' },
   { icon: Package, name: 'Одежда', count: '1.8M+', color: 'bg-purple-50 text-purple-600' },
   { icon: Star, name: 'Автотовары', count: '920K+', color: 'bg-green-50 text-green-600' },
-  { icon: Mobile, name: 'Дом и сад', count: '1.2M+', color: 'bg-orange-50 text-orange-600' },
+  { icon: Smartphone, name: 'Дом и сад', count: '1.2M+', color: 'bg-orange-50 text-orange-600' },
   { icon: Package, name: 'Красота', count: '890K+', color: 'bg-pink-50 text-pink-600' },
   { icon: Star, name: 'Спорт', count: '650K+', color: 'bg-indigo-50 text-indigo-600' },
-  { icon: Mobile, name: 'Игрушки', count: '1.1M+', color: 'bg-yellow-50 text-yellow-600' },
+  { icon: Smartphone, name: 'Игрушки', count: '1.1M+', color: 'bg-yellow-50 text-yellow-600' },
   { icon: Package, name: 'Инструменты', count: '480K+', color: 'bg-red-50 text-red-600' },
 ];
 
