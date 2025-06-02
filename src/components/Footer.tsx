@@ -61,7 +61,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-600 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 ChiGo. Все права защищены. Доставка товаров из Китая в Россию.</p>
+          <p>&copy; 2025 ChiGo. Все права защищены Артуром Есаяном. Доставка товаров из Китая в Россию.</p>
         </div>
       </div>
     </footer>
