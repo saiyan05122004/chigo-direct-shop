@@ -1,15 +1,16 @@
 
 import { Package, Smartphone, Star } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const categories = [
-  { icon: Smartphone, name: 'Электроника', count: '2.5M+', color: 'bg-blue-50 text-blue-600' },
-  { icon: Package, name: 'Одежда', count: '1.8M+', color: 'bg-purple-50 text-purple-600' },
-  { icon: Star, name: 'Автотовары', count: '920K+', color: 'bg-green-50 text-green-600' },
-  { icon: Smartphone, name: 'Дом и сад', count: '1.2M+', color: 'bg-orange-50 text-orange-600' },
-  { icon: Package, name: 'Красота', count: '890K+', color: 'bg-pink-50 text-pink-600' },
-  { icon: Star, name: 'Спорт', count: '650K+', color: 'bg-indigo-50 text-indigo-600' },
-  { icon: Smartphone, name: 'Игрушки', count: '1.1M+', color: 'bg-yellow-50 text-yellow-600' },
-  { icon: Package, name: 'Инструменты', count: '480K+', color: 'bg-red-50 text-red-600' },
+  { icon: Smartphone, name: 'Электроника', count: '2.5M+', color: 'bg-blue-50 text-blue-600', slug: 'electronics' },
+  { icon: Package, name: 'Одежда', count: '1.8M+', color: 'bg-purple-50 text-purple-600', slug: 'clothing' },
+  { icon: Star, name: 'Автотовары', count: '920K+', color: 'bg-green-50 text-green-600', slug: 'auto' },
+  { icon: Smartphone, name: 'Дом и сад', count: '1.2M+', color: 'bg-orange-50 text-orange-600', slug: 'home' },
+  { icon: Package, name: 'Красота', count: '890K+', color: 'bg-pink-50 text-pink-600', slug: 'beauty' },
+  { icon: Star, name: 'Спорт', count: '650K+', color: 'bg-indigo-50 text-indigo-600', slug: 'sport' },
+  { icon: Smartphone, name: 'Игрушки', count: '1.1M+', color: 'bg-yellow-50 text-yellow-600', slug: 'toys' },
+  { icon: Package, name: 'Инструменты', count: '480K+', color: 'bg-red-50 text-red-600', slug: 'tools' },
 ];
 
 const Categories = () => {
@@ -25,8 +26,9 @@ const Categories = () => {
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {categories.map((category, index) => (
-            <div 
+            <Link 
               key={category.name}
+              to={`/category/${category.slug}`}
               className="group cursor-pointer p-6 rounded-xl border border-gray-100 hover:border-chigo-red hover:shadow-lg transition-all duration-300 animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
@@ -35,7 +37,7 @@ const Categories = () => {
               </div>
               <h3 className="font-semibold text-chigo-gray mb-1">{category.name}</h3>
               <p className="text-sm text-gray-500">{category.count} товаров</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

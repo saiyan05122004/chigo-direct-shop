@@ -1,7 +1,7 @@
-
 import { Star, Package, Heart, Eye, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const products = [
   {
@@ -154,7 +154,9 @@ const RecommendedProducts = () => {
   const [favorites, setFavorites] = useState<number[]>([]);
   const [viewedProducts, setViewedProducts] = useState<number[]>([]);
 
-  const toggleFavorite = (productId: number) => {
+  const toggleFavorite = (productId: number, e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
     setFavorites(prev => 
       prev.includes(productId) 
         ? prev.filter(id => id !== productId)
@@ -166,6 +168,12 @@ const RecommendedProducts = () => {
     if (!viewedProducts.includes(productId)) {
       setViewedProducts(prev => [...prev, productId]);
     }
+  };
+
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    // Логика добавления в корзину
   };
 
   return (
@@ -194,8 +202,9 @@ const RecommendedProducts = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {products.map((product, index) => (
-            <div 
+            <Link
               key={product.id}
+              to={`/product/${product.id}`}
               className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-scale-in border border-gray-100"
               style={{ animationDelay: `${index * 100}ms` }}
               onMouseEnter={() => markAsViewed(product.id)}
@@ -219,7 +228,7 @@ const RecommendedProducts = () => {
                 
                 <div className="absolute top-4 right-4 flex flex-col gap-2">
                   <button 
-                    onClick={() => toggleFavorite(product.id)}
+                    onClick={(e) => toggleFavorite(product.id, e)}
                     className={`p-2 rounded-full transition-all duration-300 ${
                       favorites.includes(product.id) 
                         ? 'bg-red-500 text-white shadow-lg' 
@@ -278,12 +287,19 @@ const RecommendedProducts = () => {
                 </div>
                 
                 <div className="flex gap-2">
-                  <Button className="flex-1 bg-gradient-to-r from-chigo-red to-pink-500 hover:from-chigo-red hover:to-red-600 text-white font-medium py-3 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  <Button 
+                    onClick={handleAddToCart}
+                    className="flex-1 bg-gradient-to-r from-chigo-red to-pink-500 hover:from-chigo-red hover:to-red-600 text-white font-medium py-3 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
                     <ShoppingCart className="h-4 w-4 mr-2" />
                     В корзину
                   </Button>
                   <Button 
                     variant="outline" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                    }}
                     className="px-4 border-2 border-chigo-red text-chigo-red hover:bg-chigo-red hover:text-white rounded-xl transition-all duration-300"
                   >
                     <Package className="h-4 w-4" />
@@ -296,17 +312,19 @@ const RecommendedProducts = () => {
                   </div>
                 )}
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         
         <div className="text-center mt-12">
-          <Button 
-            variant="outline" 
-            className="border-2 border-chigo-red text-chigo-red hover:bg-chigo-red hover:text-white px-8 py-4 text-lg font-medium rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
-          >
-            Показать ещё больше товаров →
-          </Button>
+          <Link to="/search">
+            <Button 
+              variant="outline" 
+              className="border-2 border-chigo-red text-chigo-red hover:bg-chigo-red hover:text-white px-8 py-4 text-lg font-medium rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              Показать ещё больше товаров →
+            </Button>
+          </Link>
           <p className="text-gray-500 mt-4">Более 10 миллионов товаров ждут вас!</p>
         </div>
       </div>

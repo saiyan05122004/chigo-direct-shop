@@ -4,7 +4,6 @@ import SearchSection from '@/components/SearchSection';
 import Categories from '@/components/Categories';
 import RecommendedProducts from '@/components/RecommendedProducts';
 import HowItWorks from '@/components/HowItWorks';
-import TrackingSection from '@/components/TrackingSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -15,7 +14,6 @@ const Index = () => {
       <Categories />
       <RecommendedProducts />
       <HowItWorks />
-      <TrackingSection />
       <Footer />
     </div>
   );
