@@ -1,4 +1,3 @@
-
 import { Star, Package, Heart, Eye, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
@@ -152,20 +151,6 @@ const RecommendedProducts = () => {
               </div>
             </Link>
           ))}
-        </div>
-        
-        <div className="text-center mt-16">
-          <p className="text-gray-600 mb-8 text-lg">
-            🎯 Нашли что искали? Или нужна помощь с выбором?
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-chigo-blue hover:bg-blue-600 text-white px-8 py-3 text-lg">
-              💬 Связаться с менеджером
-            </Button>
-            <Button variant="outline" className="border-2 border-chigo-red text-chigo-red hover:bg-chigo-red hover:text-white px-8 py-3 text-lg">
-              📱 Скачать приложение
-            </Button>
-          </div>
         </div>
       </div>
     </section>
