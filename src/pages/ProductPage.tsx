@@ -1,16 +1,15 @@
-
 import { useParams } from 'react-router-dom';
 import { Star, ShoppingCart, Heart, Truck, Shield, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-
-// Импортируем данные товаров из отдельного файла
 import { products } from '@/data/products';
+import { useCart } from '@/contexts/CartContext';
 
 const ProductPage = () => {
   const { id } = useParams();
+  const { addToCart } = useCart();
   const product = products.find(p => p.id === Number(id));
 
   // Если товар не найден, показываем сообщение об ошибке
@@ -28,6 +27,15 @@ const ProductPage = () => {
       </div>
     );
   }
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      image: product.image
+    });
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -122,7 +130,10 @@ const ProductPage = () => {
               </div>
 
               <div className="flex gap-4 mb-6">
-                <Button className="flex-1 bg-chigo-red hover:bg-red-600 text-white py-3 text-lg">
+                <Button 
+                  onClick={handleAddToCart}
+                  className="flex-1 bg-chigo-red hover:bg-red-600 text-white py-3 text-lg"
+                >
                   <ShoppingCart className="h-5 w-5 mr-2" />
                   Добавить в корзину
                 </Button>

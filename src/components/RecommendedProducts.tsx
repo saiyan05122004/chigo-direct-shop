@@ -4,10 +4,12 @@ import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { products } from '@/data/products';
+import { useCart } from '@/contexts/CartContext';
 
 const RecommendedProducts = () => {
   const [favorites, setFavorites] = useState<number[]>([]);
   const [viewedProducts, setViewedProducts] = useState<number[]>([]);
+  const { addToCart } = useCart();
 
   const toggleFavorite = (productId: number, e: React.MouseEvent) => {
     e.preventDefault();
@@ -25,10 +27,15 @@ const RecommendedProducts = () => {
     }
   };
 
-  const handleAddToCart = (e: React.MouseEvent) => {
+  const handleAddToCart = (product: any, e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    // Логика добавления в корзину
+    addToCart({
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      image: product.image
+    });
   };
 
   return (
@@ -128,7 +135,7 @@ const RecommendedProducts = () => {
                 
                 <div className="flex gap-2">
                   <Button 
-                    onClick={handleAddToCart}
+                    onClick={(e) => handleAddToCart(product, e)}
                     className="flex-1 bg-chigo-red hover:bg-red-600 text-white text-sm py-2 h-auto transition-all duration-300"
                   >
                     <ShoppingCart className="h-4 w-4 mr-2" />
