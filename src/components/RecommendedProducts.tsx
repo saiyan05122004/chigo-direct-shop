@@ -782,5 +782,3 @@ const RecommendedProducts = () => {
 };
 
 export default RecommendedProducts;
-
-</edits_to_apply>
