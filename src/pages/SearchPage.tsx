@@ -8,7 +8,7 @@ import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-// Моковые данные для поиска
+// Расширенные данные для поиска
 const allProducts = [
   {
     id: 1,
@@ -17,7 +17,7 @@ const allProducts = [
     rating: 4.8,
     reviews: 1234,
     image: 'https://images.unsplash.com/photo-1588423771073-b8903fbb85b5?w=400&h=400&fit=crop',
-    keywords: ['наушники', 'apple', 'airpods', 'беспроводные', 'электроника']
+    keywords: ['наушники', 'apple', 'airpods', 'беспроводные', 'электроника', 'музыка']
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const allProducts = [
     rating: 4.6,
     reviews: 892,
     image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=400&fit=crop',
-    keywords: ['смартфон', 'xiaomi', 'redmi', 'телефон', 'электроника']
+    keywords: ['смартфон', 'xiaomi', 'redmi', 'телефон', 'электроника', 'мобильный']
   },
   {
     id: 3,
@@ -35,7 +35,16 @@ const allProducts = [
     rating: 4.7,
     reviews: 567,
     image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop',
-    keywords: ['кроссовки', 'nike', 'обувь', 'спорт', 'мужские']
+    keywords: ['кроссовки', 'nike', 'обувь', 'спорт', 'мужские', 'бег']
+  },
+  {
+    id: 4,
+    title: 'Умные часы Apple Watch Series 9',
+    price: '₽28,900',
+    rating: 4.9,
+    reviews: 2341,
+    image: 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400&h=400&fit=crop',
+    keywords: ['часы', 'apple', 'watch', 'умные', 'фитнес', 'здоровье']
   },
   {
     id: 5,
@@ -44,7 +53,106 @@ const allProducts = [
     rating: 4.5,
     reviews: 445,
     image: 'https://images.unsplash.com/photo-1527814050087-3793815479db?w=400&h=400&fit=crop',
-    keywords: ['мышь', 'gaming', 'игровая', 'rgb', 'компьютер']
+    keywords: ['мышь', 'gaming', 'игровая', 'rgb', 'компьютер', 'беспроводная']
+  },
+  {
+    id: 6,
+    title: 'Женская куртка зимняя пуховик',
+    price: '₽5,900',
+    rating: 4.4,
+    reviews: 234,
+    image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=400&fit=crop',
+    keywords: ['куртка', 'пуховик', 'зимняя', 'женская', 'одежда', 'теплая']
+  },
+  {
+    id: 7,
+    title: 'Механическая клавиатура RGB',
+    price: '₽7,900',
+    rating: 4.8,
+    reviews: 1123,
+    image: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400&h=400&fit=crop',
+    keywords: ['клавиатура', 'механическая', 'rgb', 'игровая', 'компьютер']
+  },
+  {
+    id: 8,
+    title: 'Портативная Bluetooth колонка',
+    price: '₽3,900',
+    rating: 4.6,
+    reviews: 678,
+    image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop',
+    keywords: ['колонка', 'bluetooth', 'портативная', 'музыка', 'беспроводная']
+  },
+  {
+    id: 16,
+    title: 'Мужская футболка хлопок базовая',
+    price: '₽890',
+    rating: 4.2,
+    reviews: 1456,
+    image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop',
+    keywords: ['футболка', 'мужская', 'хлопок', 'базовая', 'одежда', 'повседневная']
+  },
+  {
+    id: 17,
+    title: 'Женские джинсы скинни высокая посадка',
+    price: '₽2,990',
+    rating: 4.5,
+    reviews: 678,
+    image: 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400&h=400&fit=crop',
+    keywords: ['джинсы', 'женские', 'скинни', 'высокая посадка', 'одежда']
+  },
+  {
+    id: 22,
+    title: 'Набор кухонных ножей из стали',
+    price: '₽2,990',
+    rating: 4.7,
+    reviews: 789,
+    image: 'https://images.unsplash.com/photo-1593618998160-e34014e67546?w=400&h=400&fit=crop',
+    keywords: ['ножи', 'кухонные', 'сталь', 'набор', 'дом', 'кухня']
+  },
+  {
+    id: 31,
+    title: 'Набор кистей для макияжа 12 шт',
+    price: '₽990',
+    rating: 4.5,
+    reviews: 789,
+    image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=400&fit=crop',
+    keywords: ['кисти', 'макияж', 'красота', 'набор', 'косметика']
+  },
+  {
+    id: 35,
+    title: 'Йога коврик противоскользящий',
+    price: '₽990',
+    rating: 4.6,
+    reviews: 567,
+    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=400&fit=crop',
+    keywords: ['йога', 'коврик', 'фитнес', 'спорт', 'противоскользящий']
+  },
+  {
+    id: 39,
+    title: 'Автомобильное зарядное устройство USB',
+    price: '₽490',
+    rating: 4.5,
+    reviews: 789,
+    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=400&fit=crop',
+    keywords: ['зарядное', 'автомобильное', 'usb', 'авто', 'зарядка']
+  },
+  {
+    id: 42,
+    title: 'Конструктор LEGO совместимый 500 деталей',
+    price: '₽1,990',
+    rating: 4.7,
+    reviews: 456,
+    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=400&fit=crop',
+    keywords: ['конструктор', 'lego', 'игрушка', 'детский', 'развивающий']
+  },
+  {
+    id: 45,
+    title: 'Набор отверток 24 предмета',
+    price: '₽790',
+    rating: 4.4,
+    reviews: 345,
+    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=400&fit=crop',
+    keywords: ['отвертки', 'инструменты', 'набор', 'ремонт', 'мастер']
   }
 ];
 

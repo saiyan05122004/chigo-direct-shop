@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const products = [
+  // Электроника
   {
     id: 1,
     title: 'Беспроводные наушники Apple AirPods Pro',
@@ -27,18 +28,6 @@ const products = [
     tag: 'Новинка',
     discount: '-15%',
     category: 'Электроника'
-  },
-  {
-    id: 3,
-    title: 'Мужские кроссовки Nike Air Max',
-    originalPrice: '¥899',
-    price: '₽8,900',
-    rating: 4.7,
-    reviews: 567,
-    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop',
-    tag: 'Скидка -30%',
-    discount: '-30%',
-    category: 'Одежда'
   },
   {
     id: 4,
@@ -65,18 +54,6 @@ const products = [
     category: 'Электроника'
   },
   {
-    id: 6,
-    title: 'Женская куртка зимняя пуховик',
-    originalPrice: '¥599',
-    price: '₽5,900',
-    rating: 4.4,
-    reviews: 234,
-    image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=400&fit=crop',
-    tag: 'Зимняя коллекция',
-    discount: '-40%',
-    category: 'Одежда'
-  },
-  {
     id: 7,
     title: 'Механическая клавиатура RGB',
     originalPrice: '¥799',
@@ -101,17 +78,153 @@ const products = [
     category: 'Электроника'
   },
   {
-    id: 9,
-    title: 'Рюкзак для ноутбука водонепроницаемый',
+    id: 11,
+    title: 'Умная лампочка Wi-Fi RGB',
+    originalPrice: '¥99',
+    price: '₽990',
+    rating: 4.7,
+    reviews: 789,
+    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=400&fit=crop',
+    tag: 'Умный дом',
+    discount: '-45%',
+    category: 'Электроника'
+  },
+  {
+    id: 13,
+    title: 'Планшет Samsung Galaxy Tab A8',
+    originalPrice: '¥1,599',
+    price: '₽16,900',
+    rating: 4.4,
+    reviews: 567,
+    image: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&h=400&fit=crop',
+    tag: 'Популярно',
+    discount: '-18%',
+    category: 'Электроника'
+  },
+  {
+    id: 14,
+    title: 'Веб-камера HD 1080p',
     originalPrice: '¥199',
     price: '₽1,990',
     rating: 4.3,
-    reviews: 334,
-    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop',
-    tag: 'Стильно',
-    discount: '-50%',
-    category: 'Аксессуары'
+    reviews: 234,
+    image: 'https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=400&h=400&fit=crop',
+    tag: 'Работа',
+    discount: '-30%',
+    category: 'Электроника'
   },
+  {
+    id: 15,
+    title: 'Powerbank 20000mAh быстрая зарядка',
+    originalPrice: '¥149',
+    price: '₽1,490',
+    rating: 4.6,
+    reviews: 889,
+    image: 'https://images.unsplash.com/photo-1609592062458-bb018a102d6d?w=400&h=400&fit=crop',
+    tag: 'Must have',
+    discount: '-40%',
+    category: 'Электроника'
+  },
+  
+  // Одежда
+  {
+    id: 3,
+    title: 'Мужские кроссовки Nike Air Max',
+    originalPrice: '¥899',
+    price: '₽8,900',
+    rating: 4.7,
+    reviews: 567,
+    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop',
+    tag: 'Скидка -30%',
+    discount: '-30%',
+    category: 'Одежда'
+  },
+  {
+    id: 6,
+    title: 'Женская куртка зимняя пуховик',
+    originalPrice: '¥599',
+    price: '₽5,900',
+    rating: 4.4,
+    reviews: 234,
+    image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=400&fit=crop',
+    tag: 'Зимняя коллекция',
+    discount: '-40%',
+    category: 'Одежда'
+  },
+  {
+    id: 16,
+    title: 'Мужская футболка хлопок базовая',
+    originalPrice: '¥89',
+    price: '₽890',
+    rating: 4.2,
+    reviews: 1456,
+    image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop',
+    tag: 'Базовый гардероб',
+    discount: '-25%',
+    category: 'Одежда'
+  },
+  {
+    id: 17,
+    title: 'Женские джинсы скинни высокая посадка',
+    originalPrice: '¥299',
+    price: '₽2,990',
+    rating: 4.5,
+    reviews: 678,
+    image: 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400&h=400&fit=crop',
+    tag: 'Тренд',
+    discount: '-35%',
+    category: 'Одежда'
+  },
+  {
+    id: 18,
+    title: 'Мужской свитер шерстяной вязаный',
+    originalPrice: '¥399',
+    price: '₽3,990',
+    rating: 4.6,
+    reviews: 345,
+    image: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&h=400&fit=crop',
+    tag: 'Тепло',
+    discount: '-28%',
+    category: 'Одежда'
+  },
+  {
+    id: 19,
+    title: 'Женское платье летнее легкое',
+    originalPrice: '¥199',
+    price: '₽1,990',
+    rating: 4.3,
+    reviews: 567,
+    image: 'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400&h=400&fit=crop',
+    tag: 'Лето',
+    discount: '-45%',
+    category: 'Одежда'
+  },
+  {
+    id: 20,
+    title: 'Мужские шорты спортивные',
+    originalPrice: '¥149',
+    price: '₽1,490',
+    rating: 4.4,
+    reviews: 234,
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=400&fit=crop',
+    tag: 'Спорт',
+    discount: '-32%',
+    category: 'Одежда'
+  },
+  {
+    id: 21,
+    title: 'Женская блузка офисная белая',
+    originalPrice: '¥179',
+    price: '₽1,790',
+    rating: 4.1,
+    reviews: 123,
+    image: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400&h=400&fit=crop',
+    tag: 'Офис',
+    discount: '-22%',
+    category: 'Одежда'
+  },
+
+  // Дом и сад
   {
     id: 10,
     title: 'LED лампа настольная с USB',
@@ -125,16 +238,78 @@ const products = [
     category: 'Дом и сад'
   },
   {
-    id: 11,
-    title: 'Умная лампочка Wi-Fi RGB',
-    originalPrice: '¥99',
-    price: '₽990',
+    id: 22,
+    title: 'Набор кухонных ножей из стали',
+    originalPrice: '¥299',
+    price: '₽2,990',
     rating: 4.7,
     reviews: 789,
+    image: 'https://images.unsplash.com/photo-1593618998160-e34014e67546?w=400&h=400&fit=crop',
+    tag: 'Кухня',
+    discount: '-38%',
+    category: 'Дом и сад'
+  },
+  {
+    id: 23,
+    title: 'Постельное белье сатин двуспальное',
+    originalPrice: '¥199',
+    price: '₽1,990',
+    rating: 4.4,
+    reviews: 456,
+    image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400&h=400&fit=crop',
+    tag: 'Комфорт',
+    discount: '-42%',
+    category: 'Дом и сад'
+  },
+  {
+    id: 24,
+    title: 'Ковер пушистый для гостиной',
+    originalPrice: '¥399',
+    price: '₽3,990',
+    rating: 4.3,
+    reviews: 234,
+    image: 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=400&h=400&fit=crop',
+    tag: 'Уют',
+    discount: '-35%',
+    category: 'Дом и сад'
+  },
+  {
+    id: 25,
+    title: 'Увлажнитель воздуха ультразвуковой',
+    originalPrice: '¥249',
+    price: '₽2,490',
+    rating: 4.6,
+    reviews: 567,
     image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=400&fit=crop',
-    tag: 'Умный дом',
-    discount: '-45%',
-    category: 'Электроника'
+    tag: 'Здоровье',
+    discount: '-28%',
+    category: 'Дом и сад'
+  },
+  {
+    id: 26,
+    title: 'Набор полотенец махровых 6 шт',
+    originalPrice: '¥149',
+    price: '₽1,490',
+    rating: 4.2,
+    reviews: 345,
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
+    tag: 'Качество',
+    discount: '-40%',
+    category: 'Дом и сад'
+  },
+
+  // Аксессуары
+  {
+    id: 9,
+    title: 'Рюкзак для ноутбука водонепроницаемый',
+    originalPrice: '¥199',
+    price: '₽1,990',
+    rating: 4.3,
+    reviews: 334,
+    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop',
+    tag: 'Стильно',
+    discount: '-50%',
+    category: 'Аксессуары'
   },
   {
     id: 12,
@@ -147,6 +322,280 @@ const products = [
     tag: 'Защита',
     discount: '-20%',
     category: 'Аксессуары'
+  },
+  {
+    id: 27,
+    title: 'Кошелек мужской кожаный',
+    originalPrice: '¥99',
+    price: '₽990',
+    rating: 4.5,
+    reviews: 678,
+    image: 'https://images.unsplash.com/photo-1627123424574-724758594e93?w=400&h=400&fit=crop',
+    tag: 'Классика',
+    discount: '-33%',
+    category: 'Аксессуары'
+  },
+  {
+    id: 28,
+    title: 'Солнцезащитные очки унисекс',
+    originalPrice: '¥149',
+    price: '₽1,490',
+    rating: 4.4,
+    reviews: 456,
+    image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=400&fit=crop',
+    tag: 'Стиль',
+    discount: '-27%',
+    category: 'Аксессуары'
+  },
+  {
+    id: 29,
+    title: 'Женская сумка через плечо',
+    originalPrice: '¥199',
+    price: '₽1,990',
+    rating: 4.3,
+    reviews: 345,
+    image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&h=400&fit=crop',
+    tag: 'Модно',
+    discount: '-35%',
+    category: 'Аксессуары'
+  },
+  {
+    id: 30,
+    title: 'Часы наручные спортивные',
+    originalPrice: '¥299',
+    price: '₽2,990',
+    rating: 4.6,
+    reviews: 567,
+    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop',
+    tag: 'Спорт',
+    discount: '-25%',
+    category: 'Аксессуары'
+  },
+
+  // Красота и здоровье
+  {
+    id: 31,
+    title: 'Набор кистей для макияжа 12 шт',
+    originalPrice: '¥99',
+    price: '₽990',
+    rating: 4.5,
+    reviews: 789,
+    image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=400&fit=crop',
+    tag: 'Красота',
+    discount: '-45%',
+    category: 'Красота'
+  },
+  {
+    id: 32,
+    title: 'Крем для лица увлажняющий',
+    originalPrice: '¥149',
+    price: '₽1,490',
+    rating: 4.4,
+    reviews: 456,
+    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&h=400&fit=crop',
+    tag: 'Уход',
+    discount: '-38%',
+    category: 'Красота'
+  },
+  {
+    id: 33,
+    title: 'Электрическая зубная щетка',
+    originalPrice: '¥199',
+    price: '₽1,990',
+    rating: 4.7,
+    reviews: 345,
+    image: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=400&h=400&fit=crop',
+    tag: 'Здоровье',
+    discount: '-42%',
+    category: 'Красота'
+  },
+  {
+    id: 34,
+    title: 'Маска для лица тканевая 10 шт',
+    originalPrice: '¥79',
+    price: '₽790',
+    rating: 4.3,
+    reviews: 234,
+    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=400&fit=crop',
+    tag: 'Spa дома',
+    discount: '-48%',
+    category: 'Красота'
+  },
+
+  // Спорт и туризм
+  {
+    id: 35,
+    title: 'Йога коврик противоскользящий',
+    originalPrice: '¥99',
+    price: '₽990',
+    rating: 4.6,
+    reviews: 567,
+    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=400&fit=crop',
+    tag: 'Фитнес',
+    discount: '-35%',
+    category: 'Спорт'
+  },
+  {
+    id: 36,
+    title: 'Гантели разборные 20 кг',
+    originalPrice: '¥399',
+    price: '₽3,990',
+    rating: 4.5,
+    reviews: 234,
+    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop',
+    tag: 'Сила',
+    discount: '-28%',
+    category: 'Спорт'
+  },
+  {
+    id: 37,
+    title: 'Велосипедный шлем защитный',
+    originalPrice: '¥149',
+    price: '₽1,490',
+    rating: 4.4,
+    reviews: 345,
+    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=400&fit=crop',
+    tag: 'Безопасность',
+    discount: '-32%',
+    category: 'Спорт'
+  },
+  {
+    id: 38,
+    title: 'Термос спортивный 1 литр',
+    originalPrice: '¥79',
+    price: '₽790',
+    rating: 4.3,
+    reviews: 456,
+    image: 'https://images.unsplash.com/photo-1523362628745-0c100150b504?w=400&h=400&fit=crop',
+    tag: 'Активность',
+    discount: '-40%',
+    category: 'Спорт'
+  },
+
+  // Автотовары
+  {
+    id: 39,
+    title: 'Автомобильное зарядное устройство USB',
+    originalPrice: '¥49',
+    price: '₽490',
+    rating: 4.5,
+    reviews: 789,
+    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=400&fit=crop',
+    tag: 'В дорогу',
+    discount: '-38%',
+    category: 'Автотовары'
+  },
+  {
+    id: 40,
+    title: 'Коврики автомобильные резиновые',
+    originalPrice: '¥99',
+    price: '₽990',
+    rating: 4.4,
+    reviews: 234,
+    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=400&fit=crop',
+    tag: 'Чистота',
+    discount: '-35%',
+    category: 'Автотовары'
+  },
+  {
+    id: 41,
+    title: 'Держатель для телефона в авто',
+    originalPrice: '¥59',
+    price: '₽590',
+    rating: 4.6,
+    reviews: 567,
+    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=400&fit=crop',
+    tag: 'Удобство',
+    discount: '-42%',
+    category: 'Автотовары'
+  },
+
+  // Игрушки
+  {
+    id: 42,
+    title: 'Конструктор LEGO совместимый 500 деталей',
+    originalPrice: '¥199',
+    price: '₽1,990',
+    rating: 4.7,
+    reviews: 456,
+    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=400&fit=crop',
+    tag: 'Развитие',
+    discount: '-28%',
+    category: 'Игрушки'
+  },
+  {
+    id: 43,
+    title: 'Радиоуправляемая машинка',
+    originalPrice: '¥149',
+    price: '₽1,490',
+    rating: 4.5,
+    reviews: 234,
+    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=400&fit=crop',
+    tag: 'Веселье',
+    discount: '-33%',
+    category: 'Игрушки'
+  },
+  {
+    id: 44,
+    title: 'Мягкая игрушка медведь 50 см',
+    originalPrice: '¥99',
+    price: '₽990',
+    rating: 4.8,
+    reviews: 678,
+    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=400&fit=crop',
+    tag: 'Милота',
+    discount: '-45%',
+    category: 'Игрушки'
+  },
+
+  // Инструменты
+  {
+    id: 45,
+    title: 'Набор отверток 24 предмета',
+    originalPrice: '¥79',
+    price: '₽790',
+    rating: 4.4,
+    reviews: 345,
+    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=400&fit=crop',
+    tag: 'Мастеру',
+    discount: '-38%',
+    category: 'Инструменты'
+  },
+  {
+    id: 46,
+    title: 'Дрель аккумуляторная 18V',
+    originalPrice: '¥299',
+    price: '₽2,990',
+    rating: 4.6,
+    reviews: 234,
+    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=400&fit=crop',
+    tag: 'Мощность',
+    discount: '-25%',
+    category: 'Инструменты'
+  },
+  {
+    id: 47,
+    title: 'Измерительная рулетка 5 метров',
+    originalPrice: '¥39',
+    price: '₽390',
+    rating: 4.3,
+    reviews: 567,
+    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=400&fit=crop',
+    tag: 'Точность',
+    discount: '-43%',
+    category: 'Инструменты'
+  },
+  {
+    id: 48,
+    title: 'Ящик для инструментов пластиковый',
+    originalPrice: '¥99',
+    price: '₽990',
+    rating: 4.2,
+    reviews: 123,
+    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=400&fit=crop',
+    tag: 'Порядок',
+    discount: '-35%',
+    category: 'Инструменты'
   }
 ];
 
@@ -181,10 +630,10 @@ const RecommendedProducts = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-chigo-gray mb-6 bg-gradient-to-r from-chigo-red to-purple-600 bg-clip-text text-transparent">
-            🔥 Горячие предложения
+            🔥 Огромный выбор товаров
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
-            Тысячи проверенных товаров с молниеносной доставкой прямо из Китая. 
+            Более 48 товаров в различных категориях с молниеносной доставкой прямо из Китая. 
             Гарантия качества и лучшие цены!
           </p>
           <div className="flex justify-center mt-8 space-x-4">
@@ -333,3 +782,5 @@ const RecommendedProducts = () => {
 };
 
 export default RecommendedProducts;
+
+</initial_code>
